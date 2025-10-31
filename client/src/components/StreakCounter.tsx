@@ -8,9 +8,9 @@ interface StreakCounterProps {
 export function StreakCounter({ currentStreak, bestStreak }: StreakCounterProps) {
   const getStreakColor = (streak: number) => {
     if (streak === 0) return "text-muted-foreground";
-    if (streak < 7) return "text-yellow-500";
-    if (streak < 30) return "text-orange-500";
-    return "text-red-500";
+    if (streak < 7) return "text-purple-400";
+    if (streak < 30) return "text-violet-400";
+    return "text-fuchsia-400";
   };
 
   return (

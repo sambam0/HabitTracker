@@ -1,60 +1,67 @@
-# HabitFlow - Liquid Glass Design System
+# HabitFlow - Dark Glass Design System
 
 ## Overview
-HabitFlow features a modern **liquid glass** (glassmorphism) design aesthetic, combining transparency, blur effects, and vibrant gradients to create a sophisticated, depth-rich interface inspired by modern productivity tools.
+HabitFlow features a stunning **dark glass** (glassmorphism) design inspired by Solvance AI, combining deep navy backgrounds, purple accents, and sophisticated glass effects to create an immersive, premium interface.
 
 ## Design Philosophy
-- **Frosted Glass Surfaces**: Semi-transparent backgrounds with backdrop blur effects
-- **Ambient Gradients**: Subtle animated gradient backgrounds that shift over time
-- **Depth Through Layers**: Multiple transparency levels create visual hierarchy
-- **Clean Typography**: Inter font family for readability and modern feel
-- **Smooth Interactions**: Elegant transitions and hover states
+- **Deep Space Aesthetic**: Dark navy/purple gradient background creates depth
+- **Electric Purple Accents**: Vibrant violet tones for CTAs and highlights
+- **Glass Surfaces**: Semi-transparent cards with purple-tinted borders
+- **Icon Glows**: Gradient-filled icon backgrounds with soft glow effects
+- **Premium Feel**: High contrast, sophisticated color palette
 
 ## Color Palette
 
 ### Primary Colors
-- **Primary Green**: `hsl(142, 76%, 36%)` - Used for CTAs, active states, and success indicators
-- **Foreground**: 
-  - Light mode: `hsl(222, 15%, 12%)` - Deep charcoal
-  - Dark mode: `hsl(0, 0%, 95%)` - Off-white
+- **Primary Purple**: `hsl(255, 64%, 61%)` - Electric violet for CTAs, active states, and accents
+- **Foreground**: `hsl(0, 0%, 95-96%)` - Bright white/off-white for maximum contrast
 
 ### Background System
-- **Light Mode**: Animated gradient background
-  - Blue-violet spectrum: `hsl(220-280, 60%, 96%)`
-  - Smooth 15-second animation cycle
-  
-- **Dark Mode**: Animated gradient background
-  - Deep blue-violet spectrum: `hsl(220-280, 30%, 8%)`
-  - Matches light mode animation
+**Deep Space Gradient** (both light and dark modes use dark theme):
+- Navy to purple spectrum: `hsl(225-270, 55-60%, 4-9%)`
+- Smooth 20-second animation cycle
+- Creates depth and movement without distraction
 
 ### Glass Surface Colors
-Three levels of glass intensity:
+Three levels of glass intensity (dark purple-tinted):
 
 1. **Glass** (`.glass`)
-   - Light: `rgba(255, 255, 255, 0.7)` + 12px blur
-   - Dark: `rgba(30, 30, 45, 0.6)` + 12px blur
+   - Background: `rgba(20, 22, 48, 0.65-0.7)` + 12px blur
+   - Border: `rgba(108, 93, 211, 0.2-0.25)` - Subtle purple glow
+   - Shadow: Soft purple-tinted shadows
    - Use: Headers, lightweight overlays
 
 2. **Glass Card** (`.glass-card`)
-   - Light: `rgba(255, 255, 255, 0.75)` + 16px blur
-   - Dark: `rgba(30, 30, 45, 0.65)` + 16px blur
+   - Background: `rgba(20, 22, 48, 0.75-0.8)` + 16px blur
+   - Border: `rgba(108, 93, 211, 0.25-0.3)` - Purple glow border
+   - Shadow: Medium purple-tinted shadows
    - Use: Main content cards, habit cards, stats
 
 3. **Glass Intense** (`.glass-intense`)
-   - Light: `rgba(255, 255, 255, 0.85)` + 20px blur
-   - Dark: `rgba(30, 30, 45, 0.75)` + 20px blur
+   - Background: `rgba(20, 22, 48, 0.85-0.9)` + 20px blur
+   - Border: `rgba(108, 93, 211, 0.3-0.35)` - Strong purple glow
+   - Shadow: Pronounced purple-tinted shadows
    - Use: Sidebar, modals, prominent surfaces
 
+### Icon Glow Effect
+**`.icon-glow`** - Gradient-filled backgrounds for icons:
+- Gradient: `rgba(108, 93, 211, 0.4-0.5)` to `rgba(139, 120, 246, 0.3-0.4)`
+- Glow shadow: `0 4px 16-20px rgba(108, 93, 211, 0.35-0.45)`
+- Inset highlight: Subtle white overlay
+- Use: Icon containers in stat cards and feature cards
+
 ### Category Colors
-Color-coded categories with transparency:
-- **Health**: Green (`green-100/700`)
-- **Productivity**: Blue (`blue-100/700`)
-- **Fitness**: Orange (`orange-100/700`)
-- **Learning**: Purple (`purple-100/700`)
-- **Mindfulness**: Pink (`pink-100/700`)
-- **Social**: Yellow (`yellow-100/700`)
-- **Creative**: Indigo (`indigo-100/700`)
-- **Finance**: Emerald (`emerald-100/700`)
+Vibrant semi-transparent badges on dark backgrounds:
+- **Health**: `bg-emerald-500/20 text-emerald-300`
+- **Productivity**: `bg-blue-500/20 text-blue-300`
+- **Fitness**: `bg-orange-500/20 text-orange-300`
+- **Learning**: `bg-purple-500/20 text-purple-300`
+- **Mindfulness**: `bg-pink-500/20 text-pink-300`
+- **Social**: `bg-yellow-500/20 text-yellow-300`
+- **Creative**: `bg-indigo-500/20 text-indigo-300`
+- **Finance**: `bg-teal-500/20 text-teal-300`
+
+All use 20% opacity backgrounds with bright 300-weight text for optimal readability on dark glass surfaces.
 
 ## Typography
 
@@ -217,11 +224,11 @@ GitHub-style activity visualization:
 - 8x8 size (w-8 h-8)
 
 ### Streak Counter
-- Fire icon color based on streak:
+- Fire icon color based on streak (purple theme):
   - 0 days: Muted foreground
-  - 1-6 days: Yellow (500)
-  - 7-29 days: Orange (500)
-  - 30+ days: Red (500)
+  - 1-6 days: Purple (400)
+  - 7-29 days: Violet (400)
+  - 30+ days: Fuchsia (400)
 - Current streak (large, bold)
 - Best streak (smaller, muted)
 
@@ -263,20 +270,20 @@ GitHub-style activity visualization:
 - Component gaps: 1rem (16px)
 - Section spacing: 1.5rem (24px)
 
-## Dark Mode
+## Theme System
 
-### Toggle Behavior
-- Persists to localStorage
-- Instant theme switch
-- No flash of incorrect theme
-- All glass surfaces adapt
+### Dark-First Design
+- Application defaults to dark theme
+- Deep navy/purple gradient background
+- High contrast white text
+- Purple accent colors throughout
+- Glass surfaces with purple tints
 
-### Dark Mode Specifics
-- Darker transparent backgrounds
-- Increased blur for clarity
-- Brighter text colors
-- Enhanced shadows
-- Category colors use dark variants
+### Light Mode (Optional)
+- Can be toggled via theme switcher
+- Uses same dark aesthetic but slightly lighter
+- Maintains purple accent theme
+- Glass effects remain consistent
 
 ## Accessibility
 

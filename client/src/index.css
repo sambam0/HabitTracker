@@ -14,67 +14,67 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 100%;
+  --background: 225 60% 6%;
 
-  --foreground: 222 15% 12%;
+  --foreground: 0 0% 95%;
 
-  --border: 220 13% 91%;
+  --border: 255 30% 25%;
 
-  --card: 0 0% 100%;
+  --card: 232 45% 12%;
 
-  --card-foreground: 222 15% 12%;
+  --card-foreground: 0 0% 95%;
 
-  --card-border: 0 0% 100%;
+  --card-border: 255 40% 35%;
 
-  --sidebar: 0 0% 100%;
+  --sidebar: 232 50% 10%;
 
-  --sidebar-foreground: 222 15% 12%;
+  --sidebar-foreground: 0 0% 95%;
 
-  --sidebar-border: 0 0% 100%;
+  --sidebar-border: 255 30% 20%;
 
-  --sidebar-primary: 142 76% 36%;
+  --sidebar-primary: 255 64% 61%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 220 13% 91%;
+  --sidebar-accent: 232 40% 18%;
 
-  --sidebar-accent-foreground: 222 15% 12%;
+  --sidebar-accent-foreground: 0 0% 95%;
 
-  --sidebar-ring: 142 76% 36%;
+  --sidebar-ring: 255 64% 61%;
 
-  --popover: 0 0% 100%;
+  --popover: 232 45% 12%;
 
-  --popover-foreground: 222 15% 12%;
+  --popover-foreground: 0 0% 95%;
 
-  --popover-border: 0 0% 100%;
+  --popover-border: 255 40% 35%;
 
-  --primary: 142 76% 36%;
+  --primary: 255 64% 61%;
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 220 13% 88%;
+  --secondary: 232 40% 22%;
 
-  --secondary-foreground: 222 15% 12%;
+  --secondary-foreground: 0 0% 95%;
 
-  --muted: 220 9% 92%;
+  --muted: 232 35% 15%;
 
-  --muted-foreground: 222 15% 40%;
+  --muted-foreground: 0 0% 70%;
 
-  --accent: 142 20% 92%;
+  --accent: 255 50% 50%;
 
-  --accent-foreground: 222 15% 12%;
+  --accent-foreground: 0 0% 95%;
 
-  --destructive: 0 84% 42%;
+  --destructive: 0 84% 60%;
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 220 13% 85%;
-  --ring: 142 76% 36%;
-  --chart-1: 142 76% 36%;
-  --chart-2: 221 83% 53%;
+  --input: 232 35% 18%;
+  --ring: 255 64% 61%;
+  --chart-1: 255 64% 61%;
+  --chart-2: 200 70% 60%;
   --chart-3: 280 65% 60%;
-  --chart-4: 36 100% 50%;
-  --chart-5: 339 82% 52%;
+  --chart-4: 36 90% 55%;
+  --chart-5: 320 75% 58%;
 
   --font-sans: Inter, system-ui, -apple-system, sans-serif;
   --font-serif: Georgia, serif;
@@ -132,67 +132,67 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 222 15% 10%;
+  --background: 225 60% 4%;
 
-  --foreground: 0 0% 95%;
+  --foreground: 0 0% 96%;
 
-  --border: 222 15% 18%;
+  --border: 255 25% 20%;
 
-  --card: 222 15% 15%;
+  --card: 232 50% 10%;
 
-  --card-foreground: 0 0% 95%;
+  --card-foreground: 0 0% 96%;
 
-  --card-border: 0 0% 100%;
+  --card-border: 255 35% 30%;
 
-  --sidebar: 222 15% 15%;
+  --sidebar: 232 55% 8%;
 
-  --sidebar-foreground: 0 0% 95%;
+  --sidebar-foreground: 0 0% 96%;
 
-  --sidebar-border: 0 0% 100%;
+  --sidebar-border: 255 25% 18%;
 
-  --sidebar-primary: 142 76% 36%;
+  --sidebar-primary: 255 64% 61%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 222 15% 18%;
+  --sidebar-accent: 232 45% 15%;
 
-  --sidebar-accent-foreground: 0 0% 95%;
+  --sidebar-accent-foreground: 0 0% 96%;
 
-  --sidebar-ring: 142 76% 36%;
+  --sidebar-ring: 255 64% 61%;
 
-  --popover: 222 15% 15%;
+  --popover: 232 50% 10%;
 
-  --popover-foreground: 0 0% 95%;
+  --popover-foreground: 0 0% 96%;
 
-  --popover-border: 0 0% 100%;
+  --popover-border: 255 35% 30%;
 
-  --primary: 142 76% 36%;
+  --primary: 255 64% 61%;
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 222 15% 20%;
+  --secondary: 232 45% 18%;
 
-  --secondary-foreground: 0 0% 95%;
+  --secondary-foreground: 0 0% 96%;
 
-  --muted: 222 12% 18%;
+  --muted: 232 40% 12%;
 
-  --muted-foreground: 0 0% 65%;
+  --muted-foreground: 0 0% 72%;
 
-  --accent: 142 18% 20%;
+  --accent: 255 55% 55%;
 
-  --accent-foreground: 0 0% 95%;
+  --accent-foreground: 0 0% 96%;
 
-  --destructive: 0 84% 42%;
+  --destructive: 0 84% 60%;
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 222 15% 25%;
-  --ring: 142 76% 36%;
-  --chart-1: 142 76% 50%;
-  --chart-2: 221 83% 65%;
+  --input: 232 40% 15%;
+  --ring: 255 64% 61%;
+  --chart-1: 255 64% 61%;
+  --chart-2: 200 70% 65%;
   --chart-3: 280 65% 70%;
-  --chart-4: 36 100% 60%;
-  --chart-5: 339 82% 62%;
+  --chart-4: 36 90% 60%;
+  --chart-5: 320 75% 62%;
 
   --shadow-2xs: 0px 2px 0px 0px hsl(222 15% 8% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(222 15% 8% / 0.00);
@@ -240,27 +240,27 @@
   body {
     @apply font-sans antialiased text-foreground;
     background: linear-gradient(135deg, 
-      hsl(220, 60%, 96%) 0%, 
-      hsl(260, 60%, 96%) 25%,
-      hsl(200, 60%, 96%) 50%,
-      hsl(280, 60%, 96%) 75%,
-      hsl(240, 60%, 96%) 100%
+      hsl(225, 60%, 6%) 0%, 
+      hsl(255, 55%, 8%) 25%,
+      hsl(240, 58%, 7%) 50%,
+      hsl(270, 52%, 9%) 75%,
+      hsl(235, 60%, 6%) 100%
     );
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 20s ease infinite;
     min-height: 100vh;
   }
 
   .dark body {
     background: linear-gradient(135deg, 
-      hsl(220, 30%, 8%) 0%, 
-      hsl(260, 30%, 8%) 25%,
-      hsl(200, 30%, 8%) 50%,
-      hsl(280, 30%, 8%) 75%,
-      hsl(240, 30%, 8%) 100%
+      hsl(225, 60%, 4%) 0%, 
+      hsl(255, 55%, 5%) 25%,
+      hsl(240, 58%, 4%) 50%,
+      hsl(270, 52%, 6%) 75%,
+      hsl(235, 60%, 4%) 100%
     );
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 20s ease infinite;
   }
 }
 
@@ -377,46 +377,57 @@
     inset: -1px;
   }
 
-  /* Liquid Glass Effects */
+  /* Liquid Glass Effects - Dark Purple Theme */
   .glass {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 48, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(108, 93, 211, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(15, 18, 45, 0.25);
   }
 
   .dark .glass {
-    background: rgba(30, 30, 45, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    background: rgba(15, 17, 40, 0.7);
+    border: 1px solid rgba(108, 93, 211, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(8, 10, 28, 0.4);
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(20, 22, 48, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.12);
+    border: 1px solid rgba(108, 93, 211, 0.25);
+    box-shadow: 0 10px 40px 0 rgba(15, 18, 45, 0.28);
   }
 
   .dark .glass-card {
-    background: rgba(30, 30, 45, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.35);
+    background: rgba(15, 17, 40, 0.8);
+    border: 1px solid rgba(108, 93, 211, 0.3);
+    box-shadow: 0 10px 40px 0 rgba(8, 10, 28, 0.45);
   }
 
   .glass-intense {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(20, 22, 48, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.2);
+    border: 1px solid rgba(108, 93, 211, 0.3);
+    box-shadow: 0 12px 48px 0 rgba(15, 18, 45, 0.32);
   }
 
   .dark .glass-intense {
-    background: rgba(30, 30, 45, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5);
+    background: rgba(15, 17, 40, 0.9);
+    border: 1px solid rgba(108, 93, 211, 0.35);
+    box-shadow: 0 12px 48px 0 rgba(8, 10, 28, 0.5);
+  }
+
+  /* Icon Glow Effect */
+  .icon-glow {
+    background: linear-gradient(135deg, rgba(108, 93, 211, 0.4) 0%, rgba(139, 120, 246, 0.3) 100%);
+    box-shadow: 0 4px 16px rgba(108, 93, 211, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .icon-glow {
+    background: linear-gradient(135deg, rgba(108, 93, 211, 0.5) 0%, rgba(139, 120, 246, 0.4) 100%);
+    box-shadow: 0 4px 20px rgba(108, 93, 211, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.15);
   }
 }
