@@ -1,0 +1,60 @@
+Build a habit tracker web app with analytics capabilities.
+
+CORE FEATURES:
+1. User Authentication
+   - Sign up and login functionality
+   - Protected routes for authenticated users
+   - Basic user profile
+
+2. Habit Management
+   - Create new habits (name, description, optional category/color)
+   - List all user's habits on dashboard
+   - Edit and delete existing habits
+   - Each habit should track: name, description, category, creation date
+
+3. Daily Check-ins
+   - Dashboard showing all habits for today
+   - Simple checkbox/button to mark habit as complete for current day
+   - Visual indicator of completion status (checked/unchecked)
+   - Ability to view and edit past days
+
+4. Streak Tracking
+   - Calculate and display current streak for each habit
+   - Show longest streak achieved
+   - Visual streak counter on each habit card
+
+5. Basic Analytics
+   - Calendar view showing completion history (heatmap style)
+   - Completion rate percentage (last 7 days, last 30 days)
+   - Simple bar or line chart showing weekly completion trends
+   - Total completions count per habit
+
+DATABASE SCHEMA:
+- Users table: id, email, password, created_at
+- Habits table: id, user_id, name, description, category, color, created_at
+- Completions table: id, habit_id, completed_at (date), created_at
+
+UI/UX REQUIREMENTS:
+- Clean, modern interface using Tailwind CSS
+- Responsive design (mobile-friendly)
+- Dashboard as main view with today's habits prominently displayed
+- Navigation: Dashboard, All Habits, Analytics
+- Use cards for habit display
+- Color coding for habit categories
+- Visual feedback on interactions (hover states, completion animations)
+
+TECHNICAL REQUIREMENTS:
+- Use Lovable Cloud for backend and database
+- Implement proper authentication with JWT or session tokens
+- RESTful API endpoints for all CRUD operations
+- TypeScript for type safety
+- Date handling should account for user timezone
+- Export project with clean, well-structured code that can be continued locally
+
+NICE TO HAVES (if time permits):
+- Dark mode toggle
+- Habit categories/tags with filtering
+- Basic stats on dashboard (total habits, completion rate today)
+- Smooth animations for checking off habits
+
+The app should be production-ready, with the frontend code exportable so I can continue development locally. Ensure all API endpoints are documented and the database schema is clearly defined.
