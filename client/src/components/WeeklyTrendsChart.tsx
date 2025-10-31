@@ -12,7 +12,7 @@ interface WeeklyTrendsChartProps {
 
 export function WeeklyTrendsChart({ data }: WeeklyTrendsChartProps) {
   return (
-    <Card className="p-6">
+    <Card className="p-6 glass-card">
       <h3 className="text-lg font-semibold mb-4">Weekly Trends</h3>
       <ResponsiveContainer width="100%" height={250}>
         <BarChart data={data}>

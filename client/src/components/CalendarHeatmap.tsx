@@ -40,7 +40,7 @@ export function CalendarHeatmap({ data }: CalendarHeatmapProps) {
   });
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 glass-card">
       <h3 className="text-lg font-semibold mb-4">Activity Overview</h3>
       <TooltipProvider>
         <div className="flex gap-1 overflow-x-auto pb-2">

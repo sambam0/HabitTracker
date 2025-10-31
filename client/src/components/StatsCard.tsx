@@ -10,7 +10,7 @@ interface StatsCardProps {
 
 export function StatsCard({ title, value, icon: Icon, subtitle }: StatsCardProps) {
   return (
-    <Card className="p-6">
+    <Card className="p-6 glass-card">
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-muted-foreground mb-1" data-testid={`text-stats-title`}>

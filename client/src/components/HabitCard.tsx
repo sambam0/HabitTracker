@@ -32,7 +32,7 @@ interface HabitCardProps {
 export function HabitCard({ habit, onToggle, onEdit, onDelete }: HabitCardProps) {
   return (
     <Card 
-      className={`p-6 hover-elevate transition-all duration-200 ${
+      className={`p-6 glass-card transition-all duration-300 ${
         habit.completedToday ? 'opacity-70' : ''
       }`}
       data-testid={`card-habit-${habit.id}`}

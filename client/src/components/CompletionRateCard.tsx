@@ -11,7 +11,7 @@ export function CompletionRateCard({ period, percentage, trend }: CompletionRate
   const isPositive = trend >= 0;
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 glass-card">
       <div className="mb-2">
         <p className="text-sm text-muted-foreground" data-testid={`text-period-${period}`}>
           Last {period}

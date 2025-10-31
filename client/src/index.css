@@ -20,17 +20,17 @@
 
   --border: 220 13% 91%;
 
-  --card: 0 0% 98%;
+  --card: 0 0% 100%;
 
   --card-foreground: 222 15% 12%;
 
-  --card-border: 220 13% 94%;
+  --card-border: 0 0% 100%;
 
-  --sidebar: 220 13% 96%;
+  --sidebar: 0 0% 100%;
 
   --sidebar-foreground: 222 15% 12%;
 
-  --sidebar-border: 220 13% 92%;
+  --sidebar-border: 0 0% 100%;
 
   --sidebar-primary: 142 76% 36%;
 
@@ -42,11 +42,11 @@
 
   --sidebar-ring: 142 76% 36%;
 
-  --popover: 0 0% 96%;
+  --popover: 0 0% 100%;
 
   --popover-foreground: 222 15% 12%;
 
-  --popover-border: 220 13% 90%;
+  --popover-border: 0 0% 100%;
 
   --primary: 142 76% 36%;
 
@@ -138,17 +138,17 @@
 
   --border: 222 15% 18%;
 
-  --card: 222 15% 12%;
+  --card: 222 15% 15%;
 
   --card-foreground: 0 0% 95%;
 
-  --card-border: 222 15% 15%;
+  --card-border: 0 0% 100%;
 
-  --sidebar: 222 15% 14%;
+  --sidebar: 222 15% 15%;
 
   --sidebar-foreground: 0 0% 95%;
 
-  --sidebar-border: 222 15% 17%;
+  --sidebar-border: 0 0% 100%;
 
   --sidebar-primary: 142 76% 36%;
 
@@ -160,11 +160,11 @@
 
   --sidebar-ring: 142 76% 36%;
 
-  --popover: 222 15% 16%;
+  --popover: 222 15% 15%;
 
   --popover-foreground: 0 0% 95%;
 
-  --popover-border: 222 15% 19%;
+  --popover-border: 0 0% 100%;
 
   --primary: 142 76% 36%;
 
@@ -238,8 +238,36 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased text-foreground;
+    background: linear-gradient(135deg, 
+      hsl(220, 60%, 96%) 0%, 
+      hsl(260, 60%, 96%) 25%,
+      hsl(200, 60%, 96%) 50%,
+      hsl(280, 60%, 96%) 75%,
+      hsl(240, 60%, 96%) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
   }
+
+  .dark body {
+    background: linear-gradient(135deg, 
+      hsl(220, 30%, 8%) 0%, 
+      hsl(260, 30%, 8%) 25%,
+      hsl(200, 30%, 8%) 50%,
+      hsl(280, 30%, 8%) 75%,
+      hsl(240, 30%, 8%) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /**
@@ -347,5 +375,48 @@
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
+  }
+
+  /* Liquid Glass Effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .dark .glass {
+    background: rgba(30, 30, 45, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.12);
+  }
+
+  .dark .glass-card {
+    background: rgba(30, 30, 45, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  .glass-intense {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 40px 0 rgba(31, 38, 135, 0.2);
+  }
+
+  .dark .glass-intense {
+    background: rgba(30, 30, 45, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5);
   }
 }

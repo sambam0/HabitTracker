@@ -1,252 +1,340 @@
-# Habit Tracker Design Guidelines
+# HabitFlow - Liquid Glass Design System
 
-## Design Approach
+## Overview
+HabitFlow features a modern **liquid glass** (glassmorphism) design aesthetic, combining transparency, blur effects, and vibrant gradients to create a sophisticated, depth-rich interface inspired by modern productivity tools.
 
-**Selected Approach:** Design System + Reference-Based Hybrid
+## Design Philosophy
+- **Frosted Glass Surfaces**: Semi-transparent backgrounds with backdrop blur effects
+- **Ambient Gradients**: Subtle animated gradient backgrounds that shift over time
+- **Depth Through Layers**: Multiple transparency levels create visual hierarchy
+- **Clean Typography**: Inter font family for readability and modern feel
+- **Smooth Interactions**: Elegant transitions and hover states
 
-Drawing inspiration from modern productivity tools (Linear, Notion, Todoist) combined with Material Design principles for visual feedback and interactions. This creates a clean, data-focused interface that balances functionality with visual appeal.
+## Color Palette
 
-**Core Principles:**
-- Clarity over decoration: Every element serves a purpose
-- Immediate visual feedback: Users always know the state of their habits
-- Data accessibility: Analytics and trends are easy to scan and understand
-- Encouraging design: Visual rewards for maintaining streaks
+### Primary Colors
+- **Primary Green**: `hsl(142, 76%, 36%)` - Used for CTAs, active states, and success indicators
+- **Foreground**: 
+  - Light mode: `hsl(222, 15%, 12%)` - Deep charcoal
+  - Dark mode: `hsl(0, 0%, 95%)` - Off-white
 
----
+### Background System
+- **Light Mode**: Animated gradient background
+  - Blue-violet spectrum: `hsl(220-280, 60%, 96%)`
+  - Smooth 15-second animation cycle
+  
+- **Dark Mode**: Animated gradient background
+  - Deep blue-violet spectrum: `hsl(220-280, 30%, 8%)`
+  - Matches light mode animation
+
+### Glass Surface Colors
+Three levels of glass intensity:
+
+1. **Glass** (`.glass`)
+   - Light: `rgba(255, 255, 255, 0.7)` + 12px blur
+   - Dark: `rgba(30, 30, 45, 0.6)` + 12px blur
+   - Use: Headers, lightweight overlays
+
+2. **Glass Card** (`.glass-card`)
+   - Light: `rgba(255, 255, 255, 0.75)` + 16px blur
+   - Dark: `rgba(30, 30, 45, 0.65)` + 16px blur
+   - Use: Main content cards, habit cards, stats
+
+3. **Glass Intense** (`.glass-intense`)
+   - Light: `rgba(255, 255, 255, 0.85)` + 20px blur
+   - Dark: `rgba(30, 30, 45, 0.75)` + 20px blur
+   - Use: Sidebar, modals, prominent surfaces
+
+### Category Colors
+Color-coded categories with transparency:
+- **Health**: Green (`green-100/700`)
+- **Productivity**: Blue (`blue-100/700`)
+- **Fitness**: Orange (`orange-100/700`)
+- **Learning**: Purple (`purple-100/700`)
+- **Mindfulness**: Pink (`pink-100/700`)
+- **Social**: Yellow (`yellow-100/700`)
+- **Creative**: Indigo (`indigo-100/700`)
+- **Finance**: Emerald (`emerald-100/700`)
 
 ## Typography
 
-**Font Family:**
-- Primary: Inter (via Google Fonts CDN)
-- Fallback: system-ui, -apple-system, sans-serif
+### Font Family
+- **Primary**: Inter (weights: 300, 400, 500, 600, 700)
+- **Fallback**: system-ui, -apple-system, sans-serif
 
-**Hierarchy:**
-- Page Titles: text-3xl font-bold (Dashboard, All Habits, Analytics)
-- Section Headers: text-xl font-semibold
-- Habit Names: text-lg font-medium
-- Body Text: text-base font-normal
-- Metadata/Stats: text-sm font-medium
-- Helper Text: text-xs text-gray-600
+### Type Scale
+- **Display**: 3xl (30px) - Page headings
+- **Heading**: 2xl (24px), xl (20px), lg (18px)
+- **Body**: base (16px), sm (14px)
+- **Caption**: xs (12px)
 
----
+### Font Weights
+- Light: 300 - Subtle secondary text
+- Regular: 400 - Body text
+- Medium: 500 - Emphasis
+- Semibold: 600 - Headings
+- Bold: 700 - Strong emphasis, numbers
 
-## Layout System
+## Spacing System
+Based on 4px (0.25rem) grid:
+- **xs**: 0.5rem (8px)
+- **sm**: 0.75rem (12px)
+- **md**: 1rem (16px)
+- **lg**: 1.5rem (24px)
+- **xl**: 2rem (32px)
+- **2xl**: 3rem (48px)
 
-**Spacing Primitives:** Use Tailwind units of 2, 4, 6, 8, 12, 16
-- Micro spacing (gaps, padding): p-2, p-4, gap-2
-- Component spacing: p-6, p-8, m-4, m-6
-- Section spacing: py-12, py-16, mb-8
+## Components
 
-**Grid Structure:**
-- Main container: max-w-7xl mx-auto px-4 md:px-6
-- Dashboard: Single column on mobile, 2-column grid on tablet (md:grid-cols-2), 3-column on desktop (lg:grid-cols-3)
-- All Habits page: Masonry-style card grid with 1-3 columns responsive
-- Analytics: Stacked sections on mobile, 2-column split for charts on desktop
+### Glass Cards
+All cards use `.glass-card` class:
+```tsx
+<Card className="glass-card p-6">
+  {/* Content */}
+</Card>
+```
 
-**Responsive Breakpoints:**
-- Mobile-first approach
-- Tablet: md: (768px)
-- Desktop: lg: (1024px)
+Features:
+- Frosted glass background
+- Subtle white border (adapts to theme)
+- Soft shadow for depth
+- Smooth transitions on hover
 
----
+### Sidebar
+Uses `.glass-intense` for maximum clarity:
+- Fixed positioning on larger screens
+- Full-height frosted glass effect
+- Collapsible on mobile
+- Active page indicators with green accent
 
-## Component Library
-
-### Navigation
-**Top Navigation Bar:**
-- Fixed position with backdrop blur (backdrop-blur-lg bg-white/80)
-- Height: h-16
-- Logo/brand on left, nav links center-right, user profile far right
-- Active link: border-b-2 with accent color
-- Icons: Heroicons (outline for inactive, solid for active)
+### Header
+Lightweight glass overlay:
+- Uses `.glass` class
+- Borderless for seamless integration
+- Contains theme toggle and sidebar trigger
+- Blur effect over gradient background
 
 ### Habit Cards
-**Card Structure:**
-- Rounded corners: rounded-xl
-- Border: border border-gray-200
-- Padding: p-6
-- Shadow: shadow-sm hover:shadow-md transition
-- Header: Habit name + category badge
-- Body: Description (truncated with "..." if too long)
-- Footer: Streak counter, completion checkbox, action menu
+```tsx
+<Card className="glass-card p-6">
+  - Name and description
+  - Category badge (color-coded)
+  - Streak counter with fire icon
+  - Interactive checkbox (animated)
+  - Actions menu (edit/delete)
+</Card>
+```
 
-**Completion Checkbox:**
-- Large, prominent: w-8 h-8
-- Rounded: rounded-lg
-- Unchecked: border-2 border-gray-300
-- Checked: filled with success color, checkmark icon (Heroicons check)
-- Pulse animation on click
+Interactions:
+- Smooth opacity change when completed (70%)
+- 300ms transition duration
+- Line-through on completed habit names
 
-**Category Badge:**
-- Small pill: px-3 py-1 rounded-full text-xs font-medium
-- Custom background colors with corresponding text colors
-- Position: top-right of card or inline with habit name
+### Buttons
+Variants work seamlessly on glass:
+- **Primary**: Solid green with matching border
+- **Ghost**: Transparent with elevation on hover
+- **Outline**: Border with transparent background
+- **Icon**: Minimal square, size="icon"
 
-**Streak Counter:**
-- Flame icon (Heroicons fire) + number
-- Bold number display: text-2xl font-bold
-- Color intensity based on streak length (gray → yellow → orange → red for long streaks)
-- Secondary text showing "Current Streak" and "Best: X days"
+### Category Badges
+```tsx
+<Badge className="bg-{color}-100 dark:bg-{color}-900/30 text-{color}-700 dark:text-{color}-300">
+  Category
+</Badge>
+```
 
-### Dashboard Today View
-**Date Header:**
-- Large, prominent date: text-2xl font-bold
-- Format: "Monday, January 15, 2024"
-- Quick stats bar below: "X of Y habits completed today • Z% completion rate"
+Features:
+- Category-specific colors
+- Transparent backgrounds for glass aesthetic
+- No borders for clean look
+- Small text size (xs)
 
-**Habit List:**
-- Card-based layout with generous spacing (gap-6)
-- Sort: Incomplete first, then completed
-- Completed habits: slight opacity reduction (opacity-60) with strikethrough on name
-- Empty state: Motivational message with illustration placeholder + "Create Your First Habit" CTA
+### Stats Cards
+```tsx
+<Card className="glass-card p-6">
+  - Title (muted foreground)
+  - Large value (3xl, bold)
+  - Icon in subtle colored circle
+  - Optional subtitle
+</Card>
+```
 
-### Analytics Dashboard
+### Calendar Heatmap
+GitHub-style activity visualization:
+- 7-day weeks in columns
+- 12 weeks of history (84 days)
+- 6 intensity levels based on completion
+- Tooltips show exact date and counts
+- Glass card container with rounded cells
 
-**Calendar Heatmap:**
-- GitHub-style contribution graph
-- 7 rows (days of week) × weeks display
-- Cell size: w-4 h-4 with gap-1
-- Gradient intensity: 5 levels from gray-100 (no completion) to green-600 (100% completion)
-- Hover tooltip showing date and completion status
-- Labels: Days of week on left, months on top
+### Charts
+- Uses Recharts library
+- Primary color for bars/lines
+- Subtle grid with border color
+- Glass card container
+- Responsive sizing
 
-**Completion Rate Cards:**
-- Two cards side-by-side: "Last 7 Days" and "Last 30 Days"
-- Large percentage: text-4xl font-bold
-- Trend indicator: up/down arrow with color (green/red)
-- Small chart visualization below percentage (sparkline)
+## Interactions
 
-**Weekly Trends Chart:**
-- Bar chart or line chart showing last 4-8 weeks
-- Chart library: Chart.js via CDN
-- Height: h-64
-- Clean axis labels, grid lines: stroke-gray-200
-- Bar colors: gradient or solid accent color
+### Hover States
+- Uses `hover-elevate` utility class
+- Subtle brightness increase
+- 200ms smooth transitions
+- No layout shifts
 
-**Stats Grid:**
-- 3-4 stat cards in row: Total habits, Total completions, Average completion rate, Longest streak
-- Card: p-6, border, rounded-lg
-- Icon + label + large number
+### Active States
+- `active-elevate-2` for press feedback
+- More pronounced than hover
+- Immediate visual response
 
-### Forms (Create/Edit Habit)
+### Animations
+```css
+/* Background gradient shift */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
-**Form Layout:**
-- Modal overlay OR dedicated page with max-w-2xl container
-- Field spacing: space-y-6
-- Labels: text-sm font-medium mb-2
-- Inputs: p-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent
-- Required field indicator: asterisk in label
+/* Checkbox pulse */
+@keyframes pulse-check {
+  0%, 100% { scale: 1; opacity: 1; }
+  50% { scale: 1.1; opacity: 0.8; }
+}
 
-**Input Fields:**
-- Habit Name: text input, full width
-- Description: textarea, rows-4
-- Category: Select dropdown OR custom tag input with pills
-- Color picker: Grid of color swatches (8-12 preset colors), w-10 h-10 rounded-full with border on selected
+/* Content fade in */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+```
 
-**Buttons:**
-- Primary CTA: px-6 py-3 rounded-lg font-medium
-- Secondary: px-6 py-3 rounded-lg border font-medium
-- Icon buttons (delete, edit): p-2 rounded-md hover:bg-gray-100
+### Checkbox Interaction
+- Pulse animation on toggle (300ms)
+- Checkmark appears with primary color
+- Rounded square (rounded-lg)
+- 2px border thickness
+- 8x8 size (w-8 h-8)
 
-### Empty States
-- Centered content: flex flex-col items-center justify-center py-16
-- Icon: w-24 h-24 text-gray-400 (Heroicons outline)
-- Heading: text-xl font-semibold mt-4
-- Description: text-gray-600 mt-2
-- CTA button: mt-6
+### Streak Counter
+- Fire icon color based on streak:
+  - 0 days: Muted foreground
+  - 1-6 days: Yellow (500)
+  - 7-29 days: Orange (500)
+  - 30+ days: Red (500)
+- Current streak (large, bold)
+- Best streak (smaller, muted)
 
----
+## Layout
 
-## Interaction Design
+### Grid System
+- **Dashboard**: Single column, max-width 5xl
+- **All Habits**: Single column with search
+- **Analytics**: 
+  - 4-column grid for stats
+  - 2-column for completion rates
+  - Full-width for heatmap and charts
+- **Responsive**: Collapses to single column on mobile
 
-**Hover States:**
-- Cards: elevation increase (shadow-sm → shadow-md)
-- Buttons: slight scale (scale-105) or background darkening
-- Checkboxes: border color change + scale
-- Links: underline decoration
+### Page Structure
+```
+┌──────────────────────────────────┐
+│ Glass Sidebar (16rem)            │
+│  ┌────────────────────────────┐  │
+│  │ Glass Header               │  │
+│  ├────────────────────────────┤  │
+│  │                            │  │
+│  │ Scrollable Content         │  │
+│  │ (gradient background)      │  │
+│  │                            │  │
+│  └────────────────────────────┘  │
+└──────────────────────────────────┘
+```
 
-**Active/Completion States:**
-- Checkbox completion: Scale pulse animation, checkmark fade-in
-- Habit card on complete: Subtle confetti effect OR success toast notification
-- Streak milestone: Brief celebration animation (optional)
+### Sidebar
+- Width: 16rem expanded, 3rem collapsed
+- Glass intense background
+- Menu items with active states
+- Smooth expand/collapse animation
 
-**Loading States:**
-- Skeleton screens for habit cards during data fetch
-- Spinner for form submissions
-- Disabled state on buttons: opacity-50 cursor-not-allowed
+### Content Padding
+- Pages: 1.5rem (24px) all sides
+- Cards: 1.5rem (24px) internal padding
+- Component gaps: 1rem (16px)
+- Section spacing: 1.5rem (24px)
 
-**Transitions:**
-- Default: transition-all duration-200
-- Modal enter/exit: fade + scale animation
-- Page transitions: Subtle fade between views
+## Dark Mode
 
----
+### Toggle Behavior
+- Persists to localStorage
+- Instant theme switch
+- No flash of incorrect theme
+- All glass surfaces adapt
 
-## Visual Feedback System
-
-**Success Indicators:**
-- Toast notifications: slide-in from top-right, auto-dismiss
-- Green checkmarks, success icons
-- Completion percentage increases
-
-**Streak Visualizations:**
-- Fire emoji/icon that intensifies with streak length
-- Color progression for milestone achievements (3, 7, 14, 30, 100 days)
-- "Don't break the chain" visual motivation on calendar
-
-**Data Visualization Colors:**
-- Completion gradient: gray-100 → green-200 → green-400 → green-600
-- Chart accent: Single primary color with opacity variations
-- Category colors: Consistent palette (8-12 distinct colors)
-
----
+### Dark Mode Specifics
+- Darker transparent backgrounds
+- Increased blur for clarity
+- Brighter text colors
+- Enhanced shadows
+- Category colors use dark variants
 
 ## Accessibility
 
-**Focus Management:**
-- Visible focus rings: ring-2 ring-offset-2
-- Keyboard navigation: Full support for tab, enter, space
-- Skip to content link for screen readers
+### Focus States
+- Visible focus rings: `ring-2 ring-primary`
+- Keyboard navigation support
+- Tab order follows visual hierarchy
 
-**Color Contrast:**
-- Minimum WCAG AA compliance
-- Don't rely solely on color for completion status (use icons + text)
+### Color Contrast
+- All text meets WCAG AA
+- Primary green: 4.5:1 minimum
+- Muted text: readable on glass
+- Icons reinforce meaning
 
-**ARIA Labels:**
-- Habit checkboxes: Clear labels with habit name
-- Navigation: aria-current for active page
-- Charts: aria-label with data description
+### Screen Readers
+- Descriptive data-testid attributes
+- Semantic HTML structure
+- ARIA labels where needed
+- Alt text for visual elements
 
----
+## Performance
 
-## Responsive Behavior
+### Glass Effects
+- Use predefined classes only
+- Limit backdrop-filter to 3 layers
+- Hardware acceleration enabled
+- Smooth 60fps animations
 
-**Mobile (<768px):**
-- Single column layouts
-- Collapsible navigation menu (hamburger)
-- Larger touch targets (min h-12 w-12)
-- Calendar heatmap: Scroll horizontally OR show last 30 days only
-- Charts: Simplified, taller aspect ratio
+### Optimization
+- Lazy load analytics charts
+- Virtualize long habit lists
+- Debounce search inputs
+- Optimize gradient animation
 
-**Tablet (768px-1024px):**
-- 2-column habit grid
-- Side-by-side analytics cards
-- Full navigation visible
+## Best Practices
 
-**Desktop (>1024px):**
-- 3-column habit grid
-- Analytics dashboard: 2-column layout with heatmap full-width
-- Hover states fully utilized
+### Glass Usage
+1. Use `.glass`, `.glass-card`, `.glass-intense` classes
+2. Don't nest glass layers excessively
+3. Ensure text contrast on glass
+4. Test in both themes
 
----
+### Component Patterns
+1. Extend shadcn components
+2. Add glass classes for aesthetic
+3. Maintain consistent spacing
+4. Follow interaction guidelines
 
-## Images
+### Responsive Design
+1. Mobile-first approach
+2. Test on actual devices
+3. Touch targets: 44x44px minimum
+4. Simplify on smaller screens
 
-This application does not require hero images or decorative photography. Visual interest comes from:
-- Data visualizations (charts, heatmaps)
-- Iconography (Heroicons)
-- Empty state illustrations (simple line art placeholders)
-- Category color coding
-- Streak animations
-
-Use icon-based visual communication rather than photos.
+## Future Enhancements
+- Celebration animations on streaks
+- Confetti effects for milestones
+- Sound feedback (optional toggle)
+- Custom theme colors
+- Advanced visualizations
+- Social sharing features
